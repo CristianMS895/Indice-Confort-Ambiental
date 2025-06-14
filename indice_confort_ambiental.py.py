@@ -24,14 +24,14 @@ app.title = "ICAM PARQUES BOGOTÁ"
 app.config.suppress_callback_exceptions = True  # Permitir callbacks dinámicos
 
 # Nombre del archivo Excel
-archivo_excel = 'Matriz General de Indicadores.xlsx'
+archivo_excel = 'matriz_general_de_indicadores'
 
 # Definir las hojas que queremos cargar
 sheets_to_load = ['ICA-BD', 'IRA-BD', 'ICT-BD', 'ICAM-BD', 'DE_ICA', 'DE_ICT', 'DE_IRA', 'DE_ICAM']
 
 
 # 📌 Ruta del archivo Excel
-file_path = r"Matriz general de indicadores.xlsx"
+file_path = r"matriz_general_de_indicadores"
 
 # 🔹 Cargar datos de cada hoja
 try:
@@ -791,8 +791,8 @@ app.layout = html.Div(
                                     color="info",
                                     className="me-2"
                                 ),
-                                href="/assets/Matriz General de Indicadores.xlsx",
-                                download="Matriz General de Indicadores.xlsx",
+                                href="/assets/matriz_general_de_indicadores",
+                                download="matriz_general_de_indicadores",
                                 target="_blank"
                             ),
 
