@@ -352,37 +352,40 @@ grafico_localidades = px.bar(
     barmode='stack'
 )
 
-# 🔹 Modificar fuente, márgenes y espaciado de las barras
 grafico_localidades.update_layout(
     font=dict(
-        family="Franklin Gothic Condensed, sans-serif",  # 🔹 Fuente general
+        family="Franklin Gothic Condensed, sans-serif",
         size=12,  
         color="black"
     ),
     title=dict(
-        text="<b>Cantidad de Parques por localidad y confort ambiental</b>",  # 🔹 Negrita
-        font=dict(size=13, family="Franklin Gothic Condensed, sans-serif", color="black"),  # 🔹 Fuente personalizada
-        x=0.01,  # 🔹 Desplaza el título hacia la izquierda
-        xanchor="left"  # 🔹 Anclaje alineado a la izquierda
+        text="<b>Cantidad de Parques por localidad y confort ambiental</b>",
+        font=dict(size=13, family="Franklin Gothic Condensed, sans-serif", color="black"),
+        x=0.01,
+        xanchor="left"
     ),
     xaxis=dict(
-        title="Localidad",
-        titlefont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black"),  
-        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black"),  
-        tickangle=-45  # 🔹 Inclina etiquetas para mejor legibilidad
+        title=dict(
+            text="Localidad",
+            font=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black")
+        ),
+        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black"),
+        tickangle=-45
     ),
     yaxis=dict(
-        range=[0, 850],  # 🔹 Limita la altura máxima de las barras
-        title="Cantidad de Parques",
-        titlefont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black"),  
-        gridcolor="grey",  # 🔹 Cambia el color de las líneas horizontales del eje X
-        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black")  
+        range=[0, 850],
+        title=dict(
+            text="Cantidad de Parques",
+            font=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black")
+        ),
+        gridcolor="grey",
+        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=12, color="black")
     ),
-    height=200,  # 🔹 Ajusta la altura del gráfico
-    margin=dict(l=10, r=10, t=40, b=10),  # 🔹 Reduce los márgenes: l=left, r=right, t=top, b=bottom
-    bargap=0.2,  # 🔹 Espacio entre barras (0 = sin espacio, 1 = máximo espacio)
-    bargroupgap=0.2,  # 🔹 Espacio entre grupos de barras (si hay agrupación)
-    paper_bgcolor='#f5f5f5',  
+    height=200,
+    margin=dict(l=10, r=10, t=40, b=10),
+    bargap=0.2,
+    bargroupgap=0.2,
+    paper_bgcolor='#f5f5f5',
     plot_bgcolor='#f5f5f5'
 )
 
