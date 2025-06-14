@@ -1,5 +1,4 @@
 #INDICE CONFORT AMBIENTAL
-
 import dash
 from dash import Dash, html, dcc, Input, Output, State
 import pandas as pd
@@ -2154,4 +2153,4 @@ server = app.server
 
 # Ejecutar la aplicación
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=8053)  # Puerto cambiado a 8053
+    app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
