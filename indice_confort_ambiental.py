@@ -23,15 +23,11 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "ICAM PARQUES BOGOTÁ"
 app.config.suppress_callback_exceptions = True  # Permitir callbacks dinámicos
 
-# Nombre del archivo Excel
-archivo_excel = 'matriz_general_de_indicadores'
+# 📌 Ruta del archivo Excel
+file_path = os.path.join("assets", "matriz_general_de_indicadores.xlsx")
 
 # Definir las hojas que queremos cargar
 sheets_to_load = ['ICA-BD', 'IRA-BD', 'ICT-BD', 'ICAM-BD', 'DE_ICA', 'DE_ICT', 'DE_IRA', 'DE_ICAM']
-
-
-# 📌 Ruta del archivo Excel
-file_path = r"matriz_general_de_indicadores"
 
 # 🔹 Cargar datos de cada hoja
 try:
@@ -44,7 +40,7 @@ except Exception as e:
 
 
 # Cargar los datos desde el archivo Excel (todas las hojas)
-data_dict = pd.read_excel(archivo_excel, sheet_name=sheets_to_load, engine='openpyxl')
+data_dict = pd.read_excel(file_path, sheet_name=sheets_to_load, engine='openpyxl')
 
 # -------------------------------
 # Datos de Ruido Ambiental (ICA)
@@ -791,8 +787,8 @@ app.layout = html.Div(
                                     color="info",
                                     className="me-2"
                                 ),
-                                href="/assets/matriz_general_de_indicadores",
-                                download="matriz_general_de_indicadores",
+                                href="/assets/matriz_general_de_indicadores.xlsx",
+                                download="matriz_general_de_indicadores.xlsx",
                                 target="_blank"
                             ),
 
@@ -2151,6 +2147,6 @@ def toggle_modals(n_ira, c_ira, n_ict, c_ict, n_ica, c_ica):
 
 server = app.server
 
-# Ejecutar la aplicación
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
+    port = int(os.environ.get("PORT", 8053))  # Usa el puerto de Heroku o 8050 como respaldo local
+    app.run_server(debug=False, host='0.0.0.0', port=port)
