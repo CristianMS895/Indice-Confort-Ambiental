@@ -1,0 +1,10 @@
+import geopandas as gpd
+
+# URL de un servicio que devuelve GeoJSON
+url = "https://datosabiertos.bogota.gov.co/api/geospatial/xyz123?format=GeoJSON"
+
+# Cargar los polígonos desde la API
+localidades = gpd.read_file(url)
+
+# Mostrar las primeras filas para verificar
+print(localidades.head())
