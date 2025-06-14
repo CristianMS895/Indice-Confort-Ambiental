@@ -301,33 +301,37 @@ grafico_confort = px.bar(
 # 🔹 Modificar fuente y tamaño de texto en el gráfico
 grafico_confort.update_layout(
     font=dict(
-        family="Franklin Gothic Condensed, sans-serif",  # 🔹 Cambia la fuente general
-        size=11,  # 🔹 Cambia el tamaño del texto
-        color="black"  # 🔹 Cambia el color del texto
+        family="Franklin Gothic Condensed, sans-serif",
+        size=11,
+        color="black"
     ),
     title=dict(
-        text="<b>Cantidad de parques vecinales por confort ambiental</b>",  # 🔹 Texto en negrita
-        font=dict(size=13, family="Franklin Gothic Condensed, sans-serif", color="black"),  # 🔹 Fuente personalizada
-        x=0.01,  # 🔹 Desplaza el título hacia la izquierda (0 = extremo izquierdo, 0.5 = centrado, 1 = extremo derecho)
-        xanchor="left"  # 🔹 Asegura que el anclaje del texto esté alineado a la izquierda
+        text="<b>Cantidad de parques vecinales por confort ambiental</b>",
+        font=dict(size=13, family="Franklin Gothic Condensed, sans-serif", color="black"),
+        x=0.01,
+        xanchor="left"
     ),
     xaxis=dict(
-        title="Confort Ambiental",
-        titlefont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black"),  # Fuente del eje X
-        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")  # Fuente de valores en el eje X
+        title=dict(
+            text="Confort Ambiental",
+            font=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")
+        ),
+        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")
     ),
     yaxis=dict(
-        range=[0, 4000],  # 🔹 Limita la altura máxima de las barras
-        title="Cantidad de Parques",
-        titlefont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black"),  # Fuente del eje Y
-        gridcolor="grey",  # 🔹 Cambia el color de las líneas horizontales del eje X
-        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")  # Fuente de valores en el eje Y
+        range=[0, 4000],
+        title=dict(
+            text="Cantidad de Parques",
+            font=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")
+        ),
+        gridcolor="grey",
+        tickfont=dict(family="Franklin Gothic Condensed, sans-serif", size=11, color="black")
     ),
-    height=200,  # 🔹 Ajusta la altura del gráfico
-    margin=dict(l=10, r=10, t=40, b=10),  # 🔹 Reduce los márgenes: l=left, r=right, t=top, b=bottom
-    bargap=0.2,  # 🔹 Espacio entre barras (0 = sin espacio, 1 = máximo espacio)
-    bargroupgap=0.2,  # 🔹 Espacio entre grupos de barras (si hay agrupación)
-    paper_bgcolor='#f5f5f5',  
+    height=200,
+    margin=dict(l=10, r=10, t=40, b=10),
+    bargap=0.2,
+    bargroupgap=0.2,
+    paper_bgcolor='#f5f5f5',
     plot_bgcolor='#f5f5f5'
 )
 
