@@ -1,1 +1,1 @@
-web: gunicorn indice_confort_ambiental:server
+web: gunicorn indice-confort-ambiental:server
